@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gamc</title>
+  <title>GAMC</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <h1>GAMC Database Application</h1>
+
+    <nav>
+      <ul>
+        <li><%= link_to('Cars', cars_path) %></li>
+        <li><%= link_to('Add New Car', new_car_path)  %></li>
+      </ul>
+    </nav>
 
 <%= yield %>
 

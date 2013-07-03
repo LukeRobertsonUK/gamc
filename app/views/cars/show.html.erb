@@ -1,0 +1,38 @@
+<h2>
+<%=@car.make %>:
+<%= @car.model %>
+<br>
+<%= @car.engine_capacity %>L,
+<%= @car.fuel.capitalize%>,
+<%= @car.transmission.capitalize %>
+<br>
+£<%= @car.price %>
+<% if @car.used %>
+  (used)
+<%end%>
+<br>
+</h2>
+<h3>
+<%=image_tag @car.image, size: '300x225' %>
+<br>
+<%=@car.colour.capitalize %>
+<%=@car.vehicle_type %> with
+<%=@car.interior %> interior
+<br>
+Doors: <%=@car.doors %>
+<br>
+Seats: <%=@car.seats %>
+<br>
+<% if @car.sunroof %>
+Sunroof
+<%end%>
+<br>
+<% if @car.option_pack %>
+  Option Pack
+<%end%><br>
+Date of Manufacture:
+<%=@car.manufacture_date %>
+<br>
+<%= link_to "Manufacturer's Website", @car.website %>
+
+</h3>

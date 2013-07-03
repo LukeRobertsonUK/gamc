@@ -12,7 +12,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :vehicle_type
       t.string :interior
       t.date :manufacture_date
-      t.boolean :new
+      t.boolean :used
       t.string :image
       t.string :website
       t.decimal :price
