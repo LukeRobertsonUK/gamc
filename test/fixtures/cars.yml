@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  make: MyString
+  model: MyString
+  transmission: MyString
+  fuel: MyString
+  engine_capacity: 1.5
+  seats: 1
+  doors: 1
+  colour: MyString
+  vehicle_type: MyString
+  interior: MyString
+  manufacture_date: 2013-07-03
+  new: false
+  image: MyString
+  website: MyString
+  price: 9.99
+  sunroof: false
+  option_pack: false
+
+two:
+  make: MyString
+  model: MyString
+  transmission: MyString
+  fuel: MyString
+  engine_capacity: 1.5
+  seats: 1
+  doors: 1
+  colour: MyString
+  vehicle_type: MyString
+  interior: MyString
+  manufacture_date: 2013-07-03
+  new: false
+  image: MyString
+  website: MyString
+  price: 9.99
+  sunroof: false
+  option_pack: false
