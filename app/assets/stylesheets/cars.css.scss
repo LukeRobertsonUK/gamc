@@ -1,0 +1,36 @@
+$head_font: 'Montserrat Alternates', sans-serif;
+
+.container {
+  width: 940px;
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+h1 {
+  font-family: $head_font;
+  text-align: center;
+}
+
+h2 {
+   font-family: $head_font
+}
+
+label {
+    font-size: 80%;
+    font-weight: bold;
+}
+
+select {
+  font-size: 80%;
+
+
+}
+
+.input_field {
+  font-size: 80%;
+  height: 30px;
+
+
+}

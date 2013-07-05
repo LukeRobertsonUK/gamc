@@ -1,45 +1,53 @@
 <%= form_for(@car) do |f| %>
-  Make:
-  <%= f.text_field :make %>
-  Model:
-  <%= f.text_field :model %>
-  <br>
-  Transmission:
-  <%= f.select :transmission, ['automatic', 'manual'] %>
-  Fuel Type:
-  <%= f.select(:fuel_id, Fuel.all.map {|f| [f.fuel_type, f.id]}) %>
-  Engine Capacity:
-  <%= f.text_field :engine_capacity%>
-  <br>
-  Colour:
-  <%= f.text_field :colour%>
-  Seats:
-  <%= f.text_field :seats %>
-  Doors:
-  <%= f.text_field :doors %>
-  <br>
-  Vehicle Type:
- <%= f.select(:body_id, Body.all.map {|b| [b.body_type, b.id]}) %>
-  Interior:
-  <%= f.select :interior, ['leather', 'cloth'] %>
-  <br>
-  Date of Manufacture:
-  <%= f.text_field :manufacture_date %>
-  <br>
-  Pre-Owned:
-   <%= f.select :used, [true, false] %>
-   Sun-Roof:
-   <%= f.select :sunroof, [true, false] %>
-   Option Pack:
-   <%= f.select :option_pack, [true, false] %>
-   <br>
-   Photo Name:
-   <%= f.text_field :image %>
-   Manufacturer's Website:
-   <%= f.text_field :website %>
-   <br>
-   Price:
-   <%= f.text_field :price%>
-   <br>
-    <%= f.submit submit_button_value %>
+
+<div class="row">
+  <div class="span3">
+      <%= f.label :make %>
+      <%= f.text_field :make, class: 'input_field' %>
+      <%= f.label :model %>
+      <%= f.text_field :model, class: 'input_field' %>
+      <%= f.label :transmission%>
+      <%= f.select :transmission, ['automatic', 'manual'], {}, class: 'input_field' %>
+      <%= f.label :fuel_id, "Fuel Type" %>
+      <%= f.select(:fuel_id, Fuel.all.map {|f| [f.fuel_type, f.id]}, {}, class: 'input_field') %>
+      <%= f.label :engine_capacity, "Engine Capacity" %>
+      <%= f.text_field :engine_capacity, class: 'input_field'%>
+      <%= f.label :colour %>
+      <%= f.text_field :colour, class: 'input_field'%>
+      <%= f.label :seats %>
+      <%= f.text_field :seats, class: 'input_field' %>
+      <%= f.label :doors %>
+      <%= f.text_field :doors, class: 'input_field' %>
+       <%= f.label :price, 'Price' %>
+      <%= f.text_field :price, class: 'input_field'%>
+  </div>
+  <div class="span3">
+      <%= f.label :body_id, 'Type' %>
+      <%= f.select(:body_id, Body.all.map {|b| [b.body_type, b.id]}, {}, class: 'input_field') %>
+      <%= f.label :interior %>
+      <%= f.select :interior, ['leather', 'cloth'] , {}, class: 'input_field'%>
+      <%= f.label :manufacture_date, 'Date of Manufacturer' %>
+      <%= f.text_field :manufacture_date, class: 'input_field' %>
+      <%= f.label :used, 'Pre-Owned' %>
+      <%= f.select :used, [true, false] , {}, class: 'input_field'%>
+      <%= f.label :sunroof, 'Sunroof' %>
+      <%= f.select :sunroof, [true, false], {}, class: 'input_field' %>
+      <%= f.label :option_pack, 'Option Pack' %>
+      <%= f.select :option_pack, [true, false], {}, class: 'input_field' %>
+       <%= f.label :image, 'Photo Name' %>
+       <%= f.text_field :image, class: 'input_field' %>
+       <%= f.label :website, "Manufacturer's Website"  %>
+       <%= f.text_field :website, class: 'input_field' %>
+      <%= f.submit submit_button_value %>
+    </div>
   <%end%>
+  <div class="span6">
+    <% if @car.persisted? %>
+      <%=image_tag @car.image, size: '300x225' %>
+    <% end %>
+  </div>
+
+
+
+
+</div>

@@ -1,7 +1,8 @@
 <h2>
 <%=@car.make %>:
 <%= @car.model %>
-<br>
+</h2>
+<h3>
 <%= @car.engine_capacity %>L,
 <%= @car.fuel.fuel_type%>,
 <%= @car.transmission.capitalize %>
@@ -10,31 +11,33 @@
 <% if @car.used %>
   (used)
 <%end%>
-</h2>
+</h3>
+<p>
 Age:
 <%= distance_of_time_in_words(Time.now, @car.manufacture_date) %>
-
-<h3>
+</p>
+<p>
 <%=image_tag @car.image, size: '300x225' %>
-<br>
+</p>
 <%=@car.colour.capitalize %>
 <%=@car.body.body_type %> with
 <%=@car.interior %> interior
-<br>
-Doors: <%=@car.doors %>
-<br>
-Seats: <%=@car.seats %>
-<br>
-<% if @car.sunroof %>
-Sunroof
-<%end%>
-<br>
-<% if @car.option_pack %>
-  Option Pack
-<%end%><br>
-Date of Manufacture:
+</p>
+<ul>
+  <li>Doors: <%=@car.doors %></li>
+  <li>Seats: <%=@car.seats %></li>
+  <% if @car.sunroof %>
+    <li>Sunroof</li>
+  <%end%>
+  <% if @car.option_pack %>
+    <li>Option Pack</li>
+  <%end%>
+<li>Date of Manufacture:
 <%=@car.manufacture_date %>
-<br>
-<%= link_to "Manufacturer's Website", @car.website %>
-</h3>
-<%= link_to 'Edit Car Details', edit_car_path(@car)%>
+</li>
+</ul>
+<ul>
+<li><%= link_to "Manufacturer's Website", @car.website %></li>
+
+  <li><%= link_to 'Edit Car Details', edit_car_path(@car)%></li>
+</ul>
