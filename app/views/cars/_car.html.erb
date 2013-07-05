@@ -1,4 +1,4 @@
-  <%= link_to "£#{car.price.round.to_i}: #{car.car_to_string}", car %>
+  <%= link_to "£#{car.price.to_i}: #{car.car_to_string}", car %>
   <br>
   <%= link_to 'Edit', edit_car_path(car)%>
   <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }%>
