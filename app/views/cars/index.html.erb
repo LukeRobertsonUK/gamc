@@ -1,10 +1,5 @@
 <h2>Cars in database</h2>
 
-<% @cars.each do |car| %>
-  <%= link_to "£#{car.price}: #{car.car_to_string}", car %>
-  <br>
-  <%= link_to 'Edit', edit_car_path(car)%>
-  <%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' }%>
-  <br>
-  <br>
-<% end %>
+<%= render @cars %>
+
+

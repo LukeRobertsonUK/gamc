@@ -11,18 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703172652) do
+ActiveRecord::Schema.define(:version => 20130704131629) do
+
+  create_table "bodies", :force => true do |t|
+    t.string   "body_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "cars", :force => true do |t|
     t.string   "make"
     t.string   "model"
     t.string   "transmission"
-    t.string   "fuel"
     t.float    "engine_capacity"
     t.integer  "seats"
     t.integer  "doors"
     t.string   "colour"
-    t.string   "vehicle_type"
     t.string   "interior"
     t.date     "manufacture_date"
     t.boolean  "used"
@@ -33,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20130703172652) do
     t.boolean  "option_pack"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "body_id"
+    t.integer  "fuel_id"
+  end
+
+  create_table "fuels", :force => true do |t|
+    t.string   "fuel_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
