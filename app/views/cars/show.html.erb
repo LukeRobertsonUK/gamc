@@ -7,7 +7,7 @@
 <%= @car.fuel.fuel_type%>,
 <%= @car.transmission.capitalize %>
 <br>
-£<%= @car.price %>
+£<%= @car.price.to_i %>
 <% if @car.used %>
   (used)
 <%end%>
